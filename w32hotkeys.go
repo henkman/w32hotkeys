@@ -1,5 +1,11 @@
 package w32hotkey
 
+// #define WIN32_LEAN_AND_MEAN
+// #define NOCRYPT
+// #define NOGDI
+// #define NOSERVICE
+// #define NOMCX
+// #define NOIME
 // #include <windows.h>
 import "C"
 
