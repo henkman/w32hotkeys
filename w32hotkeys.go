@@ -41,10 +41,9 @@ func (this *Hotkeys) AddHotkey(ModKey, Vk uint, callback Callback) int {
 	hotkey.Vk = C.UINT(Vk)
 	hotkey.Callback = callback
 	this.hotkeys[this.id] = hotkey
-	defer func() {
-		this.id++
-	}()
-	return int(this.id)
+	oldId := this.id
+	this.id++
+	return int(oldId)
 }
 
 func (this *Hotkeys) Start() {
